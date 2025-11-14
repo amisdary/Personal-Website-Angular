@@ -43,10 +43,10 @@ jobs:
           secretId: ${{ secrets.VAULT_SECRET_ID }}
           export_env: true
           secrets: |
-            kv/frontend:DOCKER_USERNAME:DOCKER_USERNAME
-            kv/frontend:DOCKER_PASSWORD:DOCKER_PASSWORD
-            kv/frontend:DROPLET_IP:DROPLET_IP
-            kv/frontend:SSH_PRIVATE_KEY:SSH_PRIVATE_KEY
+            path=kv/frontend key=DOCKER_USERNAME env=DOCKER_USERNAME
+            path=kv/frontend key=DOCKER_PASSWORD env=DOCKER_PASSWORD
+            path=kv/frontend key=DROPLET_IP env=DROPLET_IP
+            path=kv/frontend key=SSH_PRIVATE_KEY env=SSH_PRIVATE_KEY
 
       - name: Build commit image
         run: sudo docker build --build-arg BUILD_ENV="dev" -t amisdary/personal-website-dev:${{ github.sha }} .
