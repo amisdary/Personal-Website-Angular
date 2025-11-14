@@ -37,7 +37,7 @@ jobs:
       - name: Fetch secrets from Vault
         uses: hashicorp/vault-action@v2
         with:
-          url: https://vault.andremisdary.com
+          url: https://vault.andremisdary.com:8200
           method: approle
           roleId: ${{ secrets.VAULT_ROLE_ID }}
           secretId: ${{ secrets.VAULT_SECRET_ID }}
