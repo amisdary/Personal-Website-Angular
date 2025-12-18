@@ -43,8 +43,8 @@ jobs:
           secretId: ${{ secrets.VAULT_SECRET_ID }}
           exportEnv: true
           secrets: |
-            kv/data/frontend DOCKER_USERNAME | DOCKER_USERNAME;
-            kv/data/frontend DOCKER_PASSWORD | DOCKER_PASSWORD;
+            kv/data/shared DOCKERHUB_USERNAME | DOCKERHUB_USERNAME;
+            kv/data/shared DOCKERHUB_ACCESS_TOKEN | DOCKERHUB_TOKEN;
             kv/data/frontend DROPLET_IP | DROPLET_IP;
             kv/data/frontend SSH_PRIVATE_KEY | SSH_PRIVATE_KEY;
 
