@@ -77,9 +77,9 @@ jobs:
       - name: Deploy to DigitalOcean droplet
         uses: appleboy/ssh-action@v0.1.8
         with:
-          host: ${{env.DROPLET_IP}}
+          host: ${{ env.DROPLET_IP }}
           username: deploy
-          key: ${{env.SSH_PRIVATE_KEY}}
+          key: ${{ env.SSH_PRIVATE_KEY }}
           script: |
             cd ~/personal-website
             docker pull amisdary/personal-website-dev:latest
