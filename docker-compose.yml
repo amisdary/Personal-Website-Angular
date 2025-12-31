@@ -7,9 +7,17 @@ services:
     network_mode: bridge
     ports:
       - "4997:80"
+    labels:
+      service: personal-website-dev
+      tier: frontend
+      environment: development
   personal-website-tool:
     restart: always
     image: amisdary/personal-website:latest
     network_mode: bridge
     ports:
       - "4997:80"
+    labels:
+      service: personal-website
+      tier: frontend
+      environment: production
